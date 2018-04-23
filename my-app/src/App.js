@@ -36,8 +36,8 @@ constructor(props){
   }
 
   removeItem(item){
-    const newaddToDoes = this.state.addToDoes.filter(buyItem => {
-      return buyItem != item;
+    const newaddToDoes = this.state.addToDoes.filter(addItem => {
+      return addItem !== item;
     })
 
     this.setState({
@@ -61,14 +61,16 @@ constructor(props){
           </div>
           <div calss="app-list">
             <div className="app-list__elemnt">
-              <div className="app-list__elemnt__checkbox">
-               <input type="checkbox"/>
-              </div>
               <div className="app-list__elemnt__text">
-                  <p>Todo item one</p>
 
                 {addToDoes.map(item => {
-                  return <p key={item}>{item}</p>
+                  return (
+                  <div key={item}>
+                    <p>{item}</p>
+                    <button onClick={(e) => this.removeItem(item)} type="button" className="btn-primapry">
+                      x
+                    </button>
+                  </div>)
                 })
                 }
 
