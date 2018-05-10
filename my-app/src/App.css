@@ -1,32 +1,156 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: rgba(180, 220, 238, 0.322);
+    min-height: 1000px;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-/* .app-list__elemnt__text p {
-  text-align: left;
-} */
+.whole-box {
+    max-width: 500px;
+    margin: auto;
+}
+
+.app-list__element {
+    display: flex;
+    background-color: pink;
+}
+
+.app-list__element__button {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+}
+
+.app-list__element__text {
+    padding-left: 10px;
+    border-top: 1px solid #ffffff;
+    max-width: 439px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+#newToDoInput {
+    width: 290px;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid rgb(212, 212, 212);
+    padding: 0 198px 0 10px;
+}
+
+.btn-remove {
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 13px;
+  background: #ffffff;
+  padding: 1px 7px 2px 7px;
+  border: solid #000000 1px;
+  text-decoration: none;
+}
+
+.btn-remove:hover {
+  background: #6dbcc2;
+  text-decoration: none;
+}
+
+.btn-primary {
+    position: absolute;
+    right: 10px;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 2px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 17px;
+    background: #57b59d;
+    padding: 4px 16px 4px 16px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #6dbcc2;
+    text-decoration: none;
+}
+
+.selectColor {
+    position: absolute;
+    right: 80px;
+    top: 25px;
+}
+
+.selectColor__element {
+    -webkit-appearance: none;
+    border-radius: 2px;
+}
+
+.orange {
+    border: 7px solid rgba(239, 83, 80, 0.808);
+}
+.orange::after {
+  border: 7px solid rgba(239, 83, 80, 0.808);
+
+  /* fix kind of light border */
+}
+
+.pink {
+    border: 7px solid pink;
+}
+
+.purple {
+    border: 7px solid rgba(128, 0, 128, 0.774);
+}
+
+.blue {
+    border: 7px solid rgba(66, 164, 245, 0.808);
+}
+
+.green {
+    border: 7px solid rgba(77, 225, 163, 0.815);
+}
+
+.yellow {
+    border: 7px solid rgba(243, 208, 104, 0.836);
+}
