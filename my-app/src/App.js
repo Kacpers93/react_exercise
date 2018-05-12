@@ -4,44 +4,13 @@ import './App.css';
 
 class App extends Component {
 
-
-  // radio button
-
-
-  // getInitialState() {
-  //     return {
-  //       selectedOption: 'option1'
-  //     };
-  //   }
-
-  // handleOptionChange(changeEvent) {
-  //   this.setState({
-  //     selectedOption: changeEvent.target.value
-  //   });
-  // }
-
-  // addToDo(e) {
-  //   formSubmitEvent.preventDefault();
-  
-  //   console.log('You have selected:', this.state.selectedOption);
-  // }
-
-  //   render: function () {
-  //     return (
-  //       <div>
-  //         somthing
-  //       </div>
-  //     );
-  //   }
-  // });
-  
-
-
-
   constructor(props) {
     super(props);
     this.state = {
-      addToDoes: ['Mati do zrobienia', 'Lukasz do niezrobienia', 'Rekin do wpie_dolu'],
+      addToDoes: [
+        { value: 'Mati do zrobienia', color: 'option1' },
+        { value: 'Lukasz do niezrobienia', color: 'option4' },
+        { value: 'Rekin do wpie_dolu', color: 'option2' }],
       message: ''
     }
   }
@@ -51,16 +20,12 @@ class App extends Component {
 
     e.preventDefault();
     const { addToDoes } = this.state;
-    const newToDo = this.newToDo.value;
+    const newToDo = {
+      value: this.newToDo.value,
+      color: this.state.selectedOption
+    };
     const isOnTheList = addToDoes.includes(newToDo);
 
-    // 
-    // 
-    // 
-    console.log('You have selected:', this.state.selectedOption);
-    // 
-    // 
-    // 
 
 
     if (isOnTheList) {
@@ -84,11 +49,11 @@ class App extends Component {
     };
   }
 
-handleOptionChange = (changeEvent) => {
-  this.setState({
-    selectedOption: changeEvent.target.value
-  });
-}
+  handleOptionChange = (changeEvent) => {
+    this.setState({
+      selectedOption: changeEvent.target.value
+    });
+  }
 
   removeItem(item) {
     const newaddToDoes = this.state.addToDoes.filter(addItem => {
@@ -119,19 +84,14 @@ handleOptionChange = (changeEvent) => {
 
               {addToDoes.map(item => {
                 return (
-                  <div key={item} className={this.state.selectedOption}
-                   /*   "app-list__element"   --tu ma byc jeszcze ta klasa
-                  jak zrobić zeby przy wyborze koloru byl on zmieniany tylko po akceptacji, a nie w kazdym momencie jego zmiany/kliknięcia (tak sie aktualnie dzieje, klasa zmienia sie w kazdym elemencie)
-
-                  
-                  */>
+                  <div key={item.value} className={`app-list__element ${item.color}`}>
                     <div className="app-list__element__button">
                       <button onClick={(e) => this.removeItem(item)} type="button" className="btn-remove">
                         x
                       </button>
                     </div>
                     <div className="app-list__element__text">
-                      <p>{item}</p>
+                      <p>{item.value}</p>
                     </div>
                   </div>
                 )

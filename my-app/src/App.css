@@ -129,11 +129,6 @@
 .orange {
     border: 7px solid rgba(239, 83, 80, 0.808);
 }
-.orange::after {
-  border: 7px solid rgba(239, 83, 80, 0.808);
-
-  /* fix kind of light border */
-}
 
 .pink {
     border: 7px solid pink;
@@ -154,3 +149,28 @@
 .yellow {
     border: 7px solid rgba(243, 208, 104, 0.836);
 }
+
+.option1 {
+    background-color: rgba(239, 83, 80, 0.808);
+}
+
+.option2 {
+    background-color: pink;
+}
+
+.option3 {
+    background-color: rgba(128, 0, 128, 0.774);
+}
+
+.option4 {
+    background-color: rgba(66, 164, 245, 0.808);
+}
+
+.option5 {
+    background-color: rgba(77, 225, 163, 0.815);
+}
+
+.option6 {
+    background-color: rgba(243, 208, 104, 0.836);
+}
+
